@@ -1,0 +1,27 @@
+{% extends 'interactions/base.html' %}
+{% load pinax_messages_tags %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div style="margin-top: 90px;"></div>
+<a href="{% url 'pinax_messages:inbox' %}">
+    <img src="{% static 'bases/backb.png' %}" class="img-fluid backbp" alt="Back">
+</a>
+    <div class="wrapper">
+        <div class="content-container">
+            <h1 class="center poppinsb title pb-4">NEW MESSAGE</h1>
+            <div class="form-container connect-form poppinsl pt-4 pb-4 center pl-5 pr-5" style="min-width: 100%;">
+        <div class="pinax-messages-create-container">
+        <form class="comment-form" action="{% url 'pinax_messages:message_create' %}" method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <div class="form-actions pt-2">
+                <a href="{% url 'pinax_messages:inbox' %}" class="cancel" style="text-decoration: none;">
+                    <button class="btn cancelbtn" type="button">Cancel</button>
+                </a>
+                <button class="btn editbtn" style="padding:3px; margin-left: 10px;">Send</button>
+            </div>
+        </form>
+    </div>
+{% endblock content %}

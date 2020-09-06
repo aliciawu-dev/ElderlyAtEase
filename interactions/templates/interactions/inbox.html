@@ -1,0 +1,76 @@
+{% extends 'interactions/base.html' %}
+{% load pinax_messages_tags %}
+{% load static %}
+
+{% block content %}
+
+<a href="{% url 'connect_view' %}" style="text-decoration: none;">
+    <button class="btn switch" type="button">Users</button>
+</a>
+<div style="margin-top: 190px;"></div>
+    
+    <div class="wrapper">
+        <div class="content-container">
+            <h1 class="center poppinsb title pb-4">INBOX</h1>
+            <div class="form-container connect-form poppinsl pt-4 center pl-5 pr-5" style="min-width: 650px;"> 
+            <div class="message-pair pt-2">
+                <h2 class="poppinsb title pb-4">Messages</h2>
+                <a href="{% url 'pinax_messages:message_create' %}" style="text-decoration: none;">
+                    <button class="btn editbtn" type="button">New Message</button>
+                </a>
+            </div>
+            <p style="text-decoration: underline;">Most Recent</p>
+        
+    <section class="mailbox">
+        
+        {% for thread in threads %}
+            <div class="thread {% if thread|unread:user %}unread{% endif %}">
+                <a href="{{thread.get_absolute_url}}">
+                    <div class="text-dark">
+                        <div class="participants">Users: {{ thread.users.all|join:", " }}</div>
+                        <div class="latest-message">
+                            <p class="subject">Subject: {{ thread.subject }}</p>
+                            <p class="content pb-5">Message: {{ thread.latest_message.content }}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        {% empty %}
+            <div class="no-messages">You have no messages.</div>
+        {% endfor %}
+    </section>
+</div>
+</div>
+
+</div>
+
+{% endblock content %}
+<!-- 
+            <div class="thread-del">
+            <h2>Subject: {{ thread.subject }}</h2>
+            <a class="button btn cancelbtn" href="{% url 'pinax_messages:thread_delete' thread.pk %}">
+                Delete
+            </a>
+            </div>
+
+    <section class="thread-messages">
+        {% for message in thread.messages.all %}
+            <div class="thread-message">
+                <div class="message-byline">
+                    <div class="message-from mb-1">From: {{ message.sender.username }}</div>
+                    <div class="message-sent mb-1">Time: {{ message.sent_at }}</div>
+                </div>
+                <div class="message-content">Message: {{ message.content|urlize|linebreaks }}</div>
+            </div>
+        {% endfor %}
+    </section>
+
+    <form class="comment-form" action="{% url 'pinax_messages:thread_detail' thread.pk %}" method="post">
+        <div class="form-actions pt-2">
+            <a href="{% url 'pinax_messages:inbox' %}" class="cancel" style="text-decoration: none;">
+                <button class="btn cancelbtn" type="button">Cancel</button>
+            </a>
+            <button class="btn editbtn" style="padding:3px; margin-left: 10px;">Send</button>
+        </div>
+    </form>
+</div> -->

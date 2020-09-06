@@ -1,0 +1,18 @@
+{% extends 'users/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div style="margin-top: px;"></div>
+<div class="wrapper">
+    <div class="content-container">
+    <h1 class="center mb-5 poppinsb title">Edit Profile</h1>
+    <div class="form-container connect-form edit-form">
+    <form method="post" enctype="multipart/form-data" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" value="Save" class="btn editbtn poppinsl" style="padding:5px; width: 100px;">Update</button>
+    </form>
+</div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,35 @@
+{% extends 'interactions/base.html' %}
+{% load pinax_messages_tags %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+{% if connections %}
+<div style="margin-top: 10px;"></div>
+<a href="{% url 'pinax_messages:inbox' %}" style="text-decoration: none;">
+    <button class="btn switchu" type="button">Inbox</button>
+</a>
+    <div class="wrapper">
+        <div class="content-container">
+            <h1 class="center poppinsb title pb-5">COMMUNITY</h1>
+            <div class="form-container connect-form poppinsl pb-4 center pl-5 pr-5" style="min-width: 100%;">
+    {% for connection in connections %}
+            <div class="message-pair pt-2">
+                <h2 style="font-size: 36px">{{ connection.other_user }}</h2>
+                <a href="{% url 'pinax_messages:message_user_create' user_id=connection.other_user.id %}">
+                    <button class="btn editbtn " type="button">Message</button>
+                </a>
+            </div>
+    {% endfor %}
+    </div>
+    </div>
+    {% else %}
+    <div style="margin-top: 10px;"></div>
+<div class="wrapper">
+    <div class="content-container">
+        <h1 class="center poppinsb title pb-2">COMMUNITY</h1>
+            <div class="center">
+                <h2>Connect with other users to build your community!</h2>
+            </div>
+        {% endif %}
+</div>
+{% endblock content %}

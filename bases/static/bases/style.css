@@ -1,0 +1,289 @@
+html, body {
+    height: 100%;
+}
+
+.poppinsb {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+.heading {
+    font-size: 85px;
+}
+.title {
+    font-size: 70px;
+}
+
+.poppinsl {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+
+.at {
+    font-family: 'Kumbh Sans', sans-serif;
+    font-weight: 400;
+}
+
+.wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex; 
+    justify-content: center; 
+    align-content: center;
+}
+
+.content-container {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+}
+
+.buttons-container {
+    display: flex; 
+    flex-direction: row; 
+    width: 80%;
+    justify-content: space-around;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.goldbtn {
+    background-color: #fbab48;
+    border-radius: 15px;
+    padding: 12px;
+    min-width: 150px;
+    font-size: 25px;
+}
+.goldbtn:hover {
+    box-shadow: 3px 3px 8px #d3d3d3;
+}
+
+.img  {
+  width: 57%;
+  max-width: 60%;
+  height: auto;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.center-form {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+    display: flex; 
+    border-radius: 20px;
+    border: 3px solid #fbab48;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 20px 40px 40px;
+}
+.register-form {
+    min-width: 650px;
+    min-height: 500px; 
+}
+
+.login-form {
+    min-height: 350px;
+    max-width: 600px;
+}
+
+.backb {
+    max-width: 85px;
+    max-height: 85px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 45px 0 0 45px;
+    border-radius: 50%;
+}
+.backb:hover {
+    box-shadow: 3px 3px 8px #d3d3d3;
+}
+
+.fieldWrapper {
+    display: flex; 
+    justify-content: center; 
+    align-content: center;
+}
+
+.fieldText {
+    font-size: 25px;
+}
+
+.nav-space {
+    padding: 10px 100px;
+    padding-bottom: 20px;
+    max-width: 65%;
+}
+
+.navbtn {
+    background-color: #fbab48;
+    border-radius: 15px;
+    padding: 10px;
+    margin-top: 15px;
+    width: 160px;
+    font-size: 23px;
+    /* box-shadow: 0px 5px 5px #d3d3d3; */
+}
+.navbtn:hover {
+    box-shadow: 3px 3px 8px #d3d3d3;
+}
+
+.nav-wrapper {
+    width: 100%;
+    flex-direction: row; 
+    justify-content: space-around; 
+    align-content: center;
+    position: fixed;
+    top: 0;
+    z-index:10;
+    display: flex;
+    background-color: #f8f8f8;
+}
+
+.connect-form {
+    flex-direction: column;
+    max-width: 850px;
+}
+
+.connect-form h2 {
+    font-size: 28px;
+}
+
+.ynbuttons {
+    max-width: 65%;
+}
+
+.connect-form-text {
+    float: left;
+}
+
+.editbtn {
+    background-color: #fbab48;
+    border-radius: 15px;
+    padding: 5px;
+    min-width: 80px;
+    font-size: 20px;
+}
+.editbtn:hover {
+    box-shadow: 3px 3px 8px #d3d3d3;
+}
+
+.edit-form {
+    min-width: 500px;
+    padding: 30px 10px 30px 50px;
+}
+.editText {
+    font-size: 20px;
+}
+
+.prof-img  {
+    min-width: 35%;
+    max-width: 250px;
+    height: auto;
+  }
+
+.message-pair {
+    flex-direction: row;
+    text-align: center;
+    align-content: center;
+    justify-content: space-between;
+    display: inline-flex;
+}
+
+.cancelbtn {
+    background-color: #429bd2;
+    border-radius: 15px;
+    padding: 3px 7px;
+    min-width: 80px;
+    font-size: 20px;
+}
+
+.cancelbtn:hover {
+    box-shadow: 3px 3px 8px #d3d3d3;
+}
+
+.thread-del {
+    flex-direction: row;
+    justify-content: space-between;
+    display: inline-flex;
+}
+
+.backbp {
+    max-width: 85px;
+    max-height: 85px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 130px 0 0 45px;
+    z-index: 1;
+    border-radius: 50%;
+}
+.backbp:hover {
+    box-shadow: 3px 3px 8px #d3d3d3;
+}
+
+.switch {
+    background-color: #429bd2;
+    border-radius: 23px;
+    padding: 5px 10px;
+    min-width: 140px;
+    font-size: 34px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 140px 120px 0  0 ;
+    z-index: 100;
+}
+
+.switch:hover {
+    box-shadow: 3px 3px 8px #d3d3d3;
+}
+
+.switchu {
+    background-color: #429bd2;
+    border-radius: 23px;
+    padding: 5px 10px;
+    min-width: 140px;
+    font-size: 34px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 255px 120px 0  0 ;
+    z-index: 1;
+}
+
+.switchu:hover {
+    box-shadow: 3px 3px 8px #d3d3d3;
+}
+
+.logout {
+    max-width: 70px;
+    max-height: 70px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-radius: 20%;
+    margin: 20px 80px 0 0;
+    z-index: 11;
+    position: fixed;
+}
+
+.logout:hover {
+    filter: invert(62%) sepia(41%) saturate(1439%) hue-rotate(175deg) brightness(62%) contrast(89%);
+}
+
+.veribtn {
+    background-color: #429bd2;
+    border-radius: 15px;
+    padding: 5px;
+    min-width: 80px;
+    font-size: 20px;
+}

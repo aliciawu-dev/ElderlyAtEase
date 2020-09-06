@@ -1,0 +1,56 @@
+{% extends 'users/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block content %}
+        {% if users %}
+        <div style="padding-top: 920px;"></div>
+    <div class="wrapper">
+        <div class="content-container">
+        <h1 class="center poppinsb title">CONNECT</h1>
+            {% for user in users %}
+                <div class="form-container connect-form poppinsl mb-5 mt-4">
+                    <div style="flex-direction: row; display: flex; padding-bottom: 45px; padding-top: 15px;">
+                        <img src="{{ user.profile.image.url }}" class="img-fluid rounded prof-img center mr-5" style="min-height: 300px; max-height: 400px;" alt="Responsive image">
+                        <div class="connect-form-text">
+                            <h2 class="pb-2">Name: {{ user.profile.full_name }}</h2>
+                            <h2 class="pb-2">Status: 
+                                {% if user.profile.caretaker %}
+                                    Caretaker
+                                {% else %}
+                                    Elder 
+                                {% endif %}
+                            </h2>  
+                            <h2 class="pb-2">Verified #: 
+                                {% if user.profile.phone_number_verified %}
+                                    Yes
+                                {% else %}
+                                    No
+                                {% endif %}
+                            </h2>  
+                            <h2>Location: {{ user.profile.location }}</h2>
+                            <h2 class="pt-2 mb-3 ">Bio: {{ user.profile.bio }}</h2>
+                        </div>
+                    </div>
+                    <div class="buttons-container center-form">
+                        <a href="{% url 'add' user.id %}">
+                            <img src="{% static 'bases/yes.png' %}" class="img-fluid ynbuttons" alt="Responsive image">
+                        </a>
+                        <a href="{% url 'reject' user.id %}">
+                            <img src="{% static 'bases/no.png' %}" class="img-fluid ynbuttons" alt="Responsive image">
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+    <div class="wrapper">
+        <div class="content-container">
+        <h1 class="center poppinsb title">CONNECT</h1>
+            <div class="center-form">
+                <h1>No new users to connect with.</h1>
+                <h1>Keep bonding with your community!</h1>
+            </div>
+        {% endif %}
+    </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,36 @@
+{% extends 'bases/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block content %}
+<div class="container text-center">
+    <a href="{% url 'landing' %}">
+        <img src="{% static 'bases/backb.png' %}" class="img-fluid backb" alt="Responsive image">
+    </a>
+
+    <h1 class="poppinsb mb-1 mt-5 center heading">Login</h1>
+
+    <div class="mt-5 form-container login-form center-form">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            <div class="pt-2"></div>
+            <div class="fieldWrapper">
+                {{ form.username.errors }}
+                <label for="{{ form.username.user }}" class="fieldText">Username:</label>
+                <div class="pl-3"></div>
+                {{ form.username}}
+            </div>
+            <div class="pb-4"></div>
+            <div class="fieldWrapper">
+                {{ form.password.errors }}
+                <label for="{{ form.password.pass }}" class="fieldText">Password:</label>
+                <div class="pl-3"></div>
+                {{ form.password}}
+            </div>
+            <div class="pb-5"></div>
+            <a><button type="submit" class="btn goldbtn poppinsl">Log In</button></a>
+        </form>
+    </div>
+</div>
+{% endblock content %}

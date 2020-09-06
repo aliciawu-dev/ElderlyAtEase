@@ -1,0 +1,43 @@
+{% extends 'users/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div style="margin-top: 120px;"></div>
+<div class="wrapper">
+    <div class="content-container">
+    <h1 class="center poppinsb mb-4 title">Profile</h1>
+            <div class="form-container connect-form poppinsl pr-5" style="width: 930px">
+                <div style="flex-direction: row; display: flex; justify-content: space-between;">
+                    <a href="{% url 'profile_edit' request.user.id %}">
+                        <button class="btn editbtn mb-4 mt-1" type="button">Edit</button>
+                    </a>
+                    <a href="{% url 'verify_setup' %}">
+                        <button class="btn veribtn mb-4 mt-1 ml-2" type="button">Verify #</button>
+                    </a>
+                </div>
+                <div style="flex-direction: row; display: flex;">
+                    <img src="{{ user.profile.image.url }}" class="img-fluid rounded prof-img center mr-5 mt-2" style="height: 380px;" alt="Profile Picture">
+                    <div class="connect-form-text">
+                        <h2 class="pb-2">Name: {{ user.profile.full_name }}</h2>
+                        <h2 class="pb-2">Status: 
+                            {% if user.profile.caretaker %}
+                                Caretaker
+                            {% else %}
+                                Elder 
+                            {% endif %}
+                        </h2>  
+                        <h2 class="pb-2">Verified #: 
+                            {% if user.profile.phone_number_verified %}
+                                Yes
+                            {% else %}
+                                No
+                            {% endif %}
+                        </h2>  
+                        <h2>Location: {{ user.profile.location }}</h2>
+                        <h2 class="pt-2 mb-5 ">Bio: {{ user.profile.bio }}</h2>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% extends 'bases/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="wrapper">
+    <div class="content-container">
+    <div class="mt-3 pl-5 pr-5 form-container center-form">
+        <div class="logoutbox">
+            <h1 class="poppinsb pb-5 mt-3 heading ">Logged Out</h1>
+            <a href="{% url 'landing' %}"><button type="submit" class="btn goldbtn poppinsl mt-2">Home</button></a>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock content %}

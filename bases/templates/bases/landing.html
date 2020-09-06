@@ -1,0 +1,22 @@
+{% extends 'bases/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="wrapper">
+    <div class="content-container">
+        <h1 class="poppinsb mb-1 center heading">Elders at Ease</h1>
+        <div class="text-center">
+            <img src="{% static 'bases/logo.png' %}" class="img-fluid rounded img center" alt="Responsive image">
+          </div>
+        <div class="buttons-container" style="margin-bottom: 20px;">
+            {% if user.is_authenticated %}
+                <a href="{% url 'profile' %}"><button type="button" class="btn goldbtn poppinsl">Login</button></a>
+            {% else %}
+                <a href="{% url 'login' %}"><button type="button" class="btn goldbtn poppinsl">Login</button></a>
+            {% endif %}
+            <a href="{% url 'register' %}"><button type="button" class="btn goldbtn poppinsl">Register</button></a>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

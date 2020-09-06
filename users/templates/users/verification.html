@@ -1,0 +1,27 @@
+{% extends 'users/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block content %}
+<div style="margin-top:130px;"></div>
+<div class="container text-center">
+    <a href="{% url 'profile' %}">
+        <img src="{% static 'bases/backb.png' %}" class="img-fluid backbp" alt="Back">
+    </a>
+
+    <h1 class="poppinsb mb-1 mt-5 center heading">Verification</h1>
+
+    {% if error %}
+        <h1>{{ error }}</h1>
+    {% endif %}
+
+    <div class="form-container mt-5 center-form" style="width: 70%;">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <div class="pb-5"></div>
+            <a><button type="submit" class="btn goldbtn poppinsl" style="font-size:20px; padding:10px;">Send Code</button></a>
+        </form>
+    </div>
+</div>
+{% endblock content %}
